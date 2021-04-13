@@ -2,5 +2,5 @@
 TP Final de Móviles
 
 Integrantes del grupo:
-· Sturniolo Leandro
-· Matías Bossa
+- Sturniolo Leandro
+- Matías Bossa

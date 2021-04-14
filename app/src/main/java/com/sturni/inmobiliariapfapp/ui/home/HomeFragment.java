@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.sturni.inmobiliariapfapp.R;
+import com.sturni.inmobiliariapfapp.request.ApiClient;
 
 public class HomeFragment extends Fragment {
 

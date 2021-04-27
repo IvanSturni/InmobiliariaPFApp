@@ -20,5 +20,9 @@
             android:id="@+id/inmueblesFragment"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Inmuebles" />
+        <item
+            android:id="@+id/inquilinosFragment"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Inquilinos" />
     </group>
 </menu>

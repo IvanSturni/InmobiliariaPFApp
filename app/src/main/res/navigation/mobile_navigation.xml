@@ -27,4 +27,10 @@
         android:name="com.sturni.inmobiliariapfapp.ui.inmuebles.InmueblesFragment"
         android:label="Inmuebles"
         tools:layout="@layout/inmuebles_fragment" />
+    <fragment
+        android:id="@+id/inquilinosFragment"
+        android:name="com.sturni.inmobiliariapfapp.ui.inquilinos.InquilinosFragment"
+        android:label="Inquilinos"
+        tools:layout="@layout/inquilinos_fragment" />
+
 </navigation>

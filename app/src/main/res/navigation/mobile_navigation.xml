@@ -22,4 +22,9 @@
         android:name="com.sturni.inmobiliariapfapp.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/inmueblesFragment"
+        android:name="com.sturni.inmobiliariapfapp.ui.inmuebles.InmueblesFragment"
+        android:label="Inmuebles"
+        tools:layout="@layout/inmuebles_fragment" />
 </navigation>

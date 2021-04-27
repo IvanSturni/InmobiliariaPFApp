@@ -47,12 +47,12 @@ public class InquilinoAdapter extends RecyclerView.Adapter<InquilinoAdapter.Inmu
                 .into(holder.ivFoto);
 
         holder.ibDetalles.setOnClickListener(v -> {
-            // TODO: IMPLEMENTAR DETALLES DE INMUEBLE
+            // TODO: IMPLEMENTAR DETALLES DE INQUILINO
             // Bundle bundle = new Bundle();
             // Inmueble inmueble = inmuebles.get(getAdapterPosition());
             // bundle.putSerializable("inmueble", inmueble);
             // Navigation.findNavController((Activity) context, R.id.nav_host_fragment).navigate(R.id.inmuebleFragment, bundle);
-            Log.d("TODO", "onClick: Ver detalles de inmueble con id " + lista.get(position).getIdInmueble());
+            Log.d("TODO", "onClick: Ver detalles de inquilino en inmueble con id " + lista.get(position).getIdInmueble());
 
         });
     }

@@ -20,7 +20,7 @@ public class InquilinosViewModel extends ViewModel {
     }
 
     public void leer(){
-        ArrayList<Inmueble> inmuebles = ApiClient.getApi().obtnerPropiedades();
+        ArrayList<Inmueble> inmuebles = ApiClient.getApi().obtenerPropiedadesAlquiladas();
         this.inmuebles.setValue(inmuebles);
     }
 }

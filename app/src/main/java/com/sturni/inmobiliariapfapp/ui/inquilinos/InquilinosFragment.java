@@ -26,7 +26,7 @@ public class InquilinosFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.inmuebles_fragment, container, false);
+        View root = inflater.inflate(R.layout.inquilinos_fragment, container, false);
         inicializarVista(root);
         return root;
     }

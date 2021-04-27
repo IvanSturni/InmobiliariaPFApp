@@ -49,7 +49,12 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.Inmueb
 
         holder.ibDetalles.setOnClickListener(v -> {
             // TODO: IMPLEMENTAR DETALLES DE INMUEBLE
+            // Bundle bundle = new Bundle();
+            // Inmueble inmueble = inmuebles.get(getAdapterPosition());
+            // bundle.putSerializable("inmueble", inmueble);
+            // Navigation.findNavController((Activity) context, R.id.nav_host_fragment).navigate(R.id.inmuebleFragment, bundle);
             Log.d("TODO", "onClick: Ver detalles de inmueble con id " + lista.get(position).getIdInmueble());
+
         });
     }
 

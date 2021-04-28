@@ -26,11 +26,26 @@
         android:id="@+id/inmueblesFragment"
         android:name="com.sturni.inmobiliariapfapp.ui.inmuebles.InmueblesFragment"
         android:label="Inmuebles"
-        tools:layout="@layout/inmuebles_fragment" />
+        tools:layout="@layout/inmuebles_fragment" >
+        <action
+            android:id="@+id/action_inmueblesFragment_to_inmuebleFragment"
+            app:destination="@id/inmuebleFragment"
+            app:enterAnim="@anim/fragment_fade_enter" />
+    </fragment>
     <fragment
         android:id="@+id/inquilinosFragment"
         android:name="com.sturni.inmobiliariapfapp.ui.inquilinos.InquilinosFragment"
         android:label="Inquilinos"
         tools:layout="@layout/inquilinos_fragment" />
+    <fragment
+        android:id="@+id/inmuebleFragment"
+        android:name="com.sturni.inmobiliariapfapp.ui.inmuebles.InmuebleFragment"
+        android:label="Detalles Inmueble"
+        tools:layout="@layout/inmueble_fragment" >
+        <action
+            android:id="@+id/action_inmuebleFragment_to_inmueblesFragment"
+            app:destination="@id/inmueblesFragment"
+            app:exitAnim="@anim/fragment_open_exit" />
+    </fragment>
 
 </navigation>

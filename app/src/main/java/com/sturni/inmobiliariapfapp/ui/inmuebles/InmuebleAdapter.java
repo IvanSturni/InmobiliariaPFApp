@@ -1,7 +1,9 @@
 package com.sturni.inmobiliariapfapp.ui.inmuebles;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -48,12 +51,10 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.Inmueb
                 .into(holder.ivFoto);
 
         holder.ibDetalles.setOnClickListener(v -> {
-            // TODO: IMPLEMENTAR DETALLES DE INMUEBLE
-            // Bundle bundle = new Bundle();
-            // Inmueble inmueble = inmuebles.get(getAdapterPosition());
-            // bundle.putSerializable("inmueble", inmueble);
-            // Navigation.findNavController((Activity) context, R.id.nav_host_fragment).navigate(R.id.inmuebleFragment, bundle);
-            Log.d("TODO", "onClick: Ver detalles de inmueble con id " + lista.get(position).getIdInmueble());
+            Bundle bundle = new Bundle();
+            Inmueble inmueble = lista.get(position);
+            bundle.putSerializable("Inmueble", inmueble);
+            Navigation.findNavController((Activity) context, R.id.nav_host_fragment).navigate(R.id.inmuebleFragment, bundle);
 
         });
     }

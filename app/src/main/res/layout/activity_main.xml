@@ -30,7 +30,7 @@
                 android:id="@+id/btSalir"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:textColor="#FFCC0000"
-                android:shadowColor="@color/purple_500"
+                android:shadowColor="#ffff0000"
                 android:outlineSpotShadowColor="#ffff0000"
                 android:translationZ="1dp"
                 android:layout_width="wrap_content"

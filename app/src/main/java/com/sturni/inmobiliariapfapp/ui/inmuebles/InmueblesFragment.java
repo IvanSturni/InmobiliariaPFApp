@@ -41,12 +41,12 @@ public class InmueblesFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(InmueblesViewModel.class);
-        mViewModel.obtenerInmueblesMutable().observe(getViewLifecycleOwner(), inmuebles -> {
+        mViewModel.getMutable().observe(getViewLifecycleOwner(), inmuebles -> {
             RecyclerView.Adapter adapter = new InmuebleAdapter(getContext(),inmuebles);
             recView.setAdapter(adapter);
             recView.setLayoutManager(new LinearLayoutManager(getContext()));
         });
-        mViewModel.leer();
+        mViewModel.cargarDatos(null);
     }
 
 }

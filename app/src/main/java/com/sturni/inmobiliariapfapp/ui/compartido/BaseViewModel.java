@@ -2,6 +2,7 @@ package com.sturni.inmobiliariapfapp.ui.compartido;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -19,5 +20,5 @@ abstract public class BaseViewModel<T> extends ViewModel {
         return mutable;
     }
 
-    abstract public void cargarDatos(Bundle bundle);
+    abstract public void cargarDatos(@Nullable Bundle bundle);
 }

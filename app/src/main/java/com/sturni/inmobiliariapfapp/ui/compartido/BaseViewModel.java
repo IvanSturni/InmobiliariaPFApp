@@ -6,8 +6,11 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.sturni.inmobiliariapfapp.request.ApiClient;
+
 abstract public class BaseViewModel<T> extends ViewModel {
     protected MutableLiveData<T> mutable;
+    protected final ApiClient api = ApiClient.getApi();
 
     public LiveData<T> getMutable() {
         if (mutable == null) {

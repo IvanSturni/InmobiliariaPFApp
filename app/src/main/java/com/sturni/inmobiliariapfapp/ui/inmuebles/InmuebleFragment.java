@@ -52,6 +52,7 @@ public class InmuebleFragment extends Fragment {
         tvInmUso = root.findViewById(R.id.tvInmUso);
         ivInmFoto = root.findViewById(R.id.ivInmFoto);
         cbInmDisponible = root.findViewById(R.id.cbInmDisponible);
+        cbInmDisponible.setOnClickListener(v -> mViewModel.conmutarEstado());
     }
 
     @SuppressLint("SetTextI18n")
@@ -70,7 +71,7 @@ public class InmuebleFragment extends Fragment {
             tvInmTipo.setText(inmueble.getTipo());
             tvInmAmbientes.setText(inmueble.getAmbientes() + "");
             tvInmUso.setText(inmueble.getUso());
-            cbInmDisponible.setActivated(inmueble.isEstado());
+            cbInmDisponible.setChecked(inmueble.isEstado());
         });
         if (getArguments() != null)
             mViewModel.cargarDatos(getArguments());

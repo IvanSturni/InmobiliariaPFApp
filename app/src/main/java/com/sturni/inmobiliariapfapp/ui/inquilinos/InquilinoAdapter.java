@@ -71,7 +71,7 @@ public class InquilinoAdapter extends RecyclerView.Adapter<InquilinoAdapter.Inmu
             super(itemView);
             tvDireccion = itemView.findViewById(R.id.tvDireccion);
             tvPrecio = itemView.findViewById(R.id.tvPrecio);
-            ivFoto = itemView.findViewById(R.id.ivFoto);
+            ivFoto = itemView.findViewById(R.id.ivInmFoto);
             ibDetalles = itemView.findViewById(R.id.ibDetalles);
         }
     }

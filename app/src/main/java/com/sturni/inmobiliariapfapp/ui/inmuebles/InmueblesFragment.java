@@ -1,6 +1,5 @@
 package com.sturni.inmobiliariapfapp.ui.inmuebles;
 
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
@@ -14,13 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.sturni.inmobiliariapfapp.R;
-import com.sturni.inmobiliariapfapp.modelo.Inmueble;
-import com.sturni.inmobiliariapfapp.request.ApiClient;
-
-import java.util.ArrayList;
 
 public class InmueblesFragment extends Fragment {
 

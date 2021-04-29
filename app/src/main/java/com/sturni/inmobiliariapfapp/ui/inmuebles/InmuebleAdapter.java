@@ -2,9 +2,7 @@ package com.sturni.inmobiliariapfapp.ui.inmuebles;
 
 import android.app.Activity;
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +42,6 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.Inmueb
     public void onBindViewHolder(@NonNull InmuebleViewHolder holder, int position) {
         holder.tvDireccion.setText(lista.get(position).getDireccion());
         holder.tvPrecio.setText("$"+lista.get(position).getPrecio());
-        String imgsrc = lista.get(position).getImagen();
         Glide.with(context)
                 .load(lista.get(position).getImagen())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
@@ -52,10 +49,8 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.Inmueb
 
         holder.ibDetalles.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
-            Inmueble inmueble = lista.get(position);
-            bundle.putSerializable("Inmueble", inmueble);
+            bundle.putSerializable("Inmueble", lista.get(position));
             Navigation.findNavController((Activity) context, R.id.nav_host_fragment).navigate(R.id.inmuebleFragment, bundle);
-
         });
     }
 
@@ -73,7 +68,7 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.Inmueb
             super(itemView);
             tvDireccion = itemView.findViewById(R.id.tvDireccion);
             tvPrecio = itemView.findViewById(R.id.tvPrecio);
-            ivFoto = itemView.findViewById(R.id.ivFoto);
+            ivFoto = itemView.findViewById(R.id.ivInmFoto);
             ibDetalles = itemView.findViewById(R.id.ibDetalles);
         }
     }

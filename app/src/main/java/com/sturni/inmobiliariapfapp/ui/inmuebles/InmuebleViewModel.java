@@ -1,23 +1,14 @@
 package com.sturni.inmobiliariapfapp.ui.inmuebles;
 
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
+import android.os.Bundle;
 
 import com.sturni.inmobiliariapfapp.modelo.Inmueble;
+import com.sturni.inmobiliariapfapp.ui.compartido.BaseViewModel;
 
-import java.util.ArrayList;
+public class InmuebleViewModel extends BaseViewModel<Inmueble> {
 
-public class InmuebleViewModel extends ViewModel {
-    private MutableLiveData<Inmueble> inmueble;
-
-    public LiveData<Inmueble> getInmuebleMutable() {
-        if (inmueble == null) {
-            inmueble = new MutableLiveData<>();
-        }
-        return inmueble;
+    @Override
+    public void cargarDatos(Bundle bundle) {
+        mutable.setValue((Inmueble) bundle.getSerializable("Inmueble"));
     }
-
-
-
 }

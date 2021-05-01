@@ -2,6 +2,8 @@ package com.sturni.inmobiliariapfapp.ui.profile;
 
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -35,8 +37,9 @@ public class profile extends Fragment {
         profileViewModel.getPropietarioMutable().observe(getViewLifecycleOwner(), new Observer<Propietario>() {
             @Override
             public void onChanged(Propietario propietario) {
+                code_et.setText(String.valueOf(propietario.getId()));
                 dni_et.setText(propietario.getDni().toString());
-                name_et.setText(propietario.getNombre().toString());
+                name_et.setText(propietario.getNombre());
                 lastname_et.setText(propietario.getApellido());
                 email_et.setText(propietario.getEmail());
                 phone_et.setText(propietario.getTelefono());
@@ -66,18 +69,35 @@ public class profile extends Fragment {
         phone_et = root.findViewById(R.id.phone_et);
         password_et = root.findViewById(R.id.password_et);
         editButton = root.findViewById(R.id.editButton);
+        editButton.setText("Editar");
+
+        code_et.setEnabled(false);
+        dni_et.setEnabled(false);
+        name_et.setEnabled(false);
+        lastname_et.setEnabled(false);
+        email_et.setEnabled(false);
+        phone_et.setEnabled(false);
+        password_et.setEnabled(false);
+
 
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Propietario prop = new Propietario();
 
+                prop.setId(Integer.parseInt(code_et.getText().toString()));
                 prop.setDni(Long.parseLong(dni_et.getText().toString()));
                 prop.setNombre(name_et.getText().toString());
                 prop.setApellido(lastname_et.getText().toString());
                 prop.setEmail(email_et.getText().toString());
                 prop.setTelefono(phone_et.getText().toString());
                 prop.setContraseña(password_et.getText().toString());
+
+                if(editButton.getText().toString() == "Editar"){
+                    editButton.setText("Guardar");
+                }else{
+                    editButton.setText("Editar");
+                }
 
                 profileViewModel.toggleButton(prop);
             }
@@ -91,6 +111,7 @@ public class profile extends Fragment {
         lastname_et.setEnabled(!lastname_et.isEnabled());
         email_et.setEnabled(!email_et.isEnabled());
         phone_et.setEnabled(!phone_et.isEnabled());
+        password_et.setEnabled(!password_et.isEnabled());
     }
 
 }

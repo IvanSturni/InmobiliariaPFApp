@@ -40,9 +40,7 @@ public class ProfileViewModel extends ViewModel {
     }
 
     public void toggleButton(Propietario prop){
-        if(buttonEditMutable.getValue() == "Editar"){
-            buttonEditMutable.setValue("Guardar");
-        }else{
+        if(buttonEditMutable.getValue() != "Guardar"){
             buttonEditMutable.setValue("Editar");
             saveProfile(prop);
         }

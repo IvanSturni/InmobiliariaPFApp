@@ -66,13 +66,15 @@
 
                 <TextView
                     android:id="@+id/tvConDireccion"
-                    android:layout_width="172dp"
+                    android:layout_width="225dp"
                     android:layout_height="32dp"
                     android:layout_marginStart="20dp"
+                    android:layout_marginBottom="16dp"
                     android:text="tvDireccion"
                     android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivConFoto"
                     app:layout_constraintStart_toEndOf="@+id/ivConFoto"
-                    app:layout_constraintTop_toTopOf="@+id/ibConPagos" />
+                    app:layout_constraintTop_toTopOf="@+id/ivConFoto" />
 
                 <TextView
                     android:id="@+id/tvConPrecio"

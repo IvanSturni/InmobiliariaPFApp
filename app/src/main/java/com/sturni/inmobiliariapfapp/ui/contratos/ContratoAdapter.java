@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -51,12 +52,6 @@ public class ContratoAdapter extends RecyclerView.Adapter<ContratoAdapter.Contra
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(holder.ivConFoto);
 
-        holder.ibConPagos.setOnClickListener(v -> {
-            Bundle bundle = new Bundle();
-            bundle.putSerializable("Inmueble", lista.get(position));
-            Navigation.findNavController((Activity) context, R.id.nav_host_fragment).navigate(R.id.pagosFragment, bundle);
-            // onClick: Ver pagos de contrato de inmueble con id lista.get(position).getIdInmueble()
-        });
     }
 
     @Override
@@ -68,6 +63,7 @@ public class ContratoAdapter extends RecyclerView.Adapter<ContratoAdapter.Contra
         TextView tvConDireccion, tvConPrecio;
         ImageView ivConFoto;
         ImageButton ibConPagos;
+        ConstraintLayout clContrato;
 
         public ContratoViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -75,6 +71,22 @@ public class ContratoAdapter extends RecyclerView.Adapter<ContratoAdapter.Contra
             tvConPrecio = itemView.findViewById(R.id.tvConPrecio);
             ivConFoto = itemView.findViewById(R.id.ivConFoto);
             ibConPagos = itemView.findViewById(R.id.ibConPagos);
+            clContrato = itemView.findViewById(R.id.clContrato);
+
+            // Para ver detalles del contrato del inmueble
+            clContrato.setOnClickListener(v -> {
+                // TODO: Implementar fragment de detalles del contrato
+                Log.d("TODO", "ContratoViewHolder: Ver detalles del contrato");
+            });
+
+            // Para ver pagos del contrato del inmueble
+            ibConPagos.setOnClickListener(v -> {
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("Inmueble", lista.get(getAdapterPosition()));
+                Navigation.findNavController((Activity) context, R.id.nav_host_fragment).navigate(R.id.pagosFragment, bundle);
+                // onClick: Ver pagos de contrato de inmueble con id lista.get(position).getIdInmueble()
+            });
+
         }
     }
 }

@@ -1,13 +1,12 @@
 package com.sturni.inmobiliariapfapp;
 
 import android.os.Bundle;
-import android.view.View;
 import android.view.Menu;
+import android.widget.TextView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -19,6 +18,8 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    private MainActivityViewModel vm;
+    private TextView tvNavNombre, tvNavEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +38,25 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        vm = new ViewModelProvider(this).get(MainActivityViewModel.class);
+        vm.getMutable().observe(this, propietario -> {
+            tvNavNombre.setText(propietario.getNombre());
+            tvNavEmail.setText(propietario.getEmail());
+        });
+    }
+
+    private void inicializarVista() {
+        tvNavNombre = findViewById(R.id.tvNavNombre);
+        tvNavEmail = findViewById(R.id.tvNavEmail);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        inicializarVista();
+        vm.cargarDatos(null);
         return true;
     }
 

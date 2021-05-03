@@ -36,5 +36,10 @@
             app:destination="@id/inmueblesFragment"
             app:exitAnim="@anim/fragment_open_exit" />
     </fragment>
+    <fragment
+        android:id="@+id/contratosFragment"
+        android:name="com.sturni.inmobiliariapfapp.ui.contratos.ContratosFragment"
+        android:label="Contratos"
+        tools:layout="@layout/inquilinos_fragment" />
 
 </navigation>

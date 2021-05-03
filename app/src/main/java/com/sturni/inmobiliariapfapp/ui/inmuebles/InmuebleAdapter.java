@@ -69,7 +69,7 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.Inmueb
             tvDireccion = itemView.findViewById(R.id.tvDireccion);
             tvPrecio = itemView.findViewById(R.id.tvPrecio);
             ivFoto = itemView.findViewById(R.id.ivInmFoto);
-            ibDetalles = itemView.findViewById(R.id.ibDetalles);
+            ibDetalles = itemView.findViewById(R.id.ibPagos);
         }
     }
 }

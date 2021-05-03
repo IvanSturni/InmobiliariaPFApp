@@ -18,7 +18,7 @@
             android:layout_margin="5dp">
 
             <ImageView
-                android:id="@+id/ivInmFoto"
+                android:id="@+id/ivConFoto"
                 android:layout_width="100dp"
                 android:layout_height="70dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -29,25 +29,25 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/tvDireccion"
+                android:id="@+id/tvConDireccion"
                 android:layout_width="172dp"
                 android:layout_height="32dp"
                 android:layout_marginStart="20dp"
                 android:text="tvDireccion"
                 android:textSize="24sp"
-                app:layout_constraintStart_toEndOf="@+id/ivInmFoto"
-                app:layout_constraintTop_toTopOf="@+id/ibPagos" />
+                app:layout_constraintStart_toEndOf="@+id/ivConFoto"
+                app:layout_constraintTop_toTopOf="@+id/ibConPagos" />
 
             <TextView
-                android:id="@+id/tvPrecio"
+                android:id="@+id/tvConPrecio"
                 android:layout_width="107dp"
                 android:layout_height="18dp"
                 android:text="tvPrecio"
-                app:layout_constraintStart_toStartOf="@+id/tvDireccion"
-                app:layout_constraintTop_toBottomOf="@+id/tvDireccion" />
+                app:layout_constraintStart_toStartOf="@+id/tvConDireccion"
+                app:layout_constraintTop_toBottomOf="@+id/tvConDireccion" />
 
             <ImageButton
-                android:id="@+id/ibPagos"
+                android:id="@+id/ibConPagos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="28dp"

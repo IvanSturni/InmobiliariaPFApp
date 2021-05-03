@@ -1,6 +1,9 @@
 package com.sturni.inmobiliariapfapp.ui.contratos;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -36,6 +40,7 @@ public class ContratoAdapter extends RecyclerView.Adapter<ContratoAdapter.Contra
         return new ContratoViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ContratoViewHolder holder, int position) {
         holder.tvConDireccion.setText(lista.get(position).getDireccion());
@@ -47,13 +52,10 @@ public class ContratoAdapter extends RecyclerView.Adapter<ContratoAdapter.Contra
                 .into(holder.ivConFoto);
 
         holder.ibConPagos.setOnClickListener(v -> {
-            // TODO: IMPLEMENTAR DETALLES DE INQUILINO
-            // Bundle bundle = new Bundle();
-            // Contrato Contrato = Contratos.get(getAdapterPosition());
-            // bundle.putSerializable("Contrato", Contrato);
-            // Navigation.findNavController((Activity) context, R.id.nav_host_fragment).navigate(R.id.ContratoFragment, bundle);
-            Log.d("TODO", "onClick: Ver pagos de contrato de inmueble con id " + lista.get(position).getIdInmueble());
-
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("Inmueble", lista.get(position));
+            Navigation.findNavController((Activity) context, R.id.nav_host_fragment).navigate(R.id.pagosFragment, bundle);
+            // onClick: Ver pagos de contrato de inmueble con id lista.get(position).getIdInmueble()
         });
     }
 

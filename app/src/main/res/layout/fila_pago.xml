@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="HardcodedText" >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp">
+
+            <TextView
+                android:id="@+id/NumeroPago"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pago Nº"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvPagNumero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="1"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/NumeroPago"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/CodigoPago"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="128dp"
+                android:text="Código: "
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/NumeroPago"
+                app:layout_constraintTop_toTopOf="@+id/NumeroPago" />
+
+            <TextView
+                android:id="@+id/tvPagCodigo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="502"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/CodigoPago"
+                app:layout_constraintTop_toTopOf="@+id/NumeroPago" />
+
+            <TextView
+                android:id="@+id/FechaPago"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Fecha: "
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/NumeroPago" />
+
+            <TextView
+                android:id="@+id/tvPagFecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="24/12/2021"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/FechaPago"
+                app:layout_constraintStart_toEndOf="@+id/FechaPago"
+                app:layout_constraintTop_toTopOf="@+id/FechaPago" />
+
+            <TextView
+                android:id="@+id/ImportePago"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Importe: "
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/CodigoPago"
+                app:layout_constraintTop_toTopOf="@+id/FechaPago"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tvPagImporte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7600.0"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ImportePago"
+                app:layout_constraintStart_toEndOf="@+id/ImportePago"
+                app:layout_constraintTop_toTopOf="@+id/ImportePago"
+                tools:textColor="@android:color/holo_green_dark" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintTop_toBottomOf="@id/cardView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

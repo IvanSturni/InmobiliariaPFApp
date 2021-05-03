@@ -5,15 +5,14 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 
 import com.sturni.inmobiliariapfapp.modelo.Inmueble;
-import com.sturni.inmobiliariapfapp.request.ApiClient;
+import com.sturni.inmobiliariapfapp.modelo.Pago;
 import com.sturni.inmobiliariapfapp.ui.compartido.BaseViewModel;
 
 import java.util.ArrayList;
 
-public class ContratosViewModel extends BaseViewModel<ArrayList<Inmueble>> {
+public class PagosViewModel extends BaseViewModel<ArrayList<Pago>> {
     @Override
     public void cargarDatos(@Nullable Bundle bundle) {
-        ArrayList<Inmueble> inmuebles = ApiClient.getApi().obtenerPropiedadesAlquiladas();
-        mutable.setValue(inmuebles);
+        mutable.setValue(api.obtenerPagos(api.obtenerContratoVigente((Inmueble) bundle.getSerializable("Inmueble"))));
     }
 }

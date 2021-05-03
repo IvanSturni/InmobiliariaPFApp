@@ -40,6 +40,19 @@
         android:id="@+id/contratosFragment"
         android:name="com.sturni.inmobiliariapfapp.ui.contratos.ContratosFragment"
         android:label="Contratos"
-        tools:layout="@layout/inquilinos_fragment" />
+        tools:layout="@layout/inquilinos_fragment" >
+        <action
+            android:id="@+id/action_contratosFragment_to_pagosFragment"
+            app:destination="@id/pagosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagosFragment"
+        android:name="com.sturni.inmobiliariapfapp.ui.contratos.PagosFragment"
+        android:label="Pagos"
+        tools:layout="@layout/pagos_fragment" >
+        <action
+            android:id="@+id/action_pagosFragment_to_contratosFragment"
+            app:destination="@id/contratosFragment" />
+    </fragment>
 
 </navigation>

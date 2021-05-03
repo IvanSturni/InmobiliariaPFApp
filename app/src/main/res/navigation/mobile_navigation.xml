@@ -12,17 +12,6 @@
         tools:layout="@layout/fragment_mapa" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.sturni.inmobiliariapfapp.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.sturni.inmobiliariapfapp.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
-    <fragment
         android:id="@+id/inmueblesFragment"
         android:name="com.sturni.inmobiliariapfapp.ui.inmuebles.InmueblesFragment"
         android:label="Inmuebles"

@@ -38,6 +38,7 @@ public class InquilinosFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
         mViewModel = new ViewModelProvider(this).get(InquilinosViewModel.class);
         mViewModel.obtenerInmueblesMutable().observe(getViewLifecycleOwner(), inmuebles -> {
             RecyclerView.Adapter adapter = new InquilinoAdapter(getContext(),inmuebles);

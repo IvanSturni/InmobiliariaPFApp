@@ -1,6 +1,8 @@
 package com.sturni.inmobiliariapfapp.ui.inquilinos;
 
+import android.app.Activity;
 import android.content.Context;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,18 +12,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.sturni.inmobiliariapfapp.R;
 import com.sturni.inmobiliariapfapp.modelo.Inmueble;
+import com.sturni.inmobiliariapfapp.modelo.Inquilino;
+import com.sturni.inmobiliariapfapp.request.ApiClient;
 
 import java.util.ArrayList;
 
 public class InquilinoAdapter extends RecyclerView.Adapter<InquilinoAdapter.InmuebleViewHolder> {
     private ArrayList<Inmueble> lista;
     private Context context;
+    private LayoutInflater layoutInflater;
 
     public InquilinoAdapter(Context context, ArrayList<Inmueble> lista) {
         this.context = context;
@@ -48,12 +54,12 @@ public class InquilinoAdapter extends RecyclerView.Adapter<InquilinoAdapter.Inmu
 
         holder.ibDetalles.setOnClickListener(v -> {
             // TODO: IMPLEMENTAR DETALLES DE INQUILINO
-            // Bundle bundle = new Bundle();
-            // Inmueble inmueble = inmuebles.get(getAdapterPosition());
-            // bundle.putSerializable("inmueble", inmueble);
-            // Navigation.findNavController((Activity) context, R.id.nav_host_fragment).navigate(R.id.inmuebleFragment, bundle);
+             Bundle bundle = new Bundle();
+             Inmueble inmueble = lista.get(position);
+             Inquilino inquilino = ApiClient.getApi().obtenerInquilino(inmueble);
+             bundle.putSerializable("inquilino", inquilino);
+             Navigation.findNavController((Activity) context, R.id.nav_host_fragment).navigate(R.id.InquilinoDetalleFragment, bundle);
             Log.d("TODO", "onClick: Ver detalles de inquilino en inmueble con id " + lista.get(position).getIdInmueble());
-
         });
     }
 

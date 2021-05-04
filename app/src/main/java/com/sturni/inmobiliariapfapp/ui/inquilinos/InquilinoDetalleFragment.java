@@ -21,7 +21,7 @@ public class InquilinoDetalleFragment extends Fragment {
     private InquilinoDetalleViewModel mViewModel;
     private Inquilino inquilinoActual;
     private TextView code_tv, name_tv, lastname_tv, dni_tv, email_tv, phone_tv, garanty_tv, garantyPhone_tv;
-
+    private TextView code_label, name_label, lastname_label, dni_label, email_label, phone_label, garanty_tv, garantyPhone_tv;
     public InquilinoDetalleFragment() {}
 
     public static InquilinoDetalleFragment newInstance() {

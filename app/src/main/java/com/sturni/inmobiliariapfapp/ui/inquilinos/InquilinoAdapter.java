@@ -54,7 +54,7 @@ public class InquilinoAdapter extends RecyclerView.Adapter<InquilinoAdapter.Inmu
                 .into(holder.ivFoto);
 
         holder.ibDetalles.setOnClickListener(v -> {
-            // TODO: IMPLEMENTAR DETALLES DE INQUILINO
+
              Bundle bundle = new Bundle();
              Inmueble inmueble = lista.get(position);
              Inquilino inquilino = ApiClient.getApi().obtenerInquilino(inmueble);

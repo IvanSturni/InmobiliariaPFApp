@@ -21,7 +21,7 @@ public class InquilinoDetalleFragment extends Fragment {
     private InquilinoDetalleViewModel mViewModel;
     private Inquilino inquilinoActual;
     private TextView code_tv, name_tv, lastname_tv, dni_tv, email_tv, phone_tv, garanty_tv, garantyPhone_tv;
-    private TextView code_label, name_label, lastname_label, dni_label, email_label, phone_label, garanty_tv, garantyPhone_tv;
+    private TextView code_label, name_label, lastname_label, dni_label, email_label, phone_label, garanty_label, garantyPhone_label;
     public InquilinoDetalleFragment() {}
 
     public static InquilinoDetalleFragment newInstance() {
@@ -60,14 +60,23 @@ public class InquilinoDetalleFragment extends Fragment {
     }
 
     private void initView(View root){
-        code_tv = root.findViewById(R.id.code_tv);
-        name_tv = root.findViewById(R.id.name_tv);
-        lastname_tv = root.findViewById(R.id.lastname_tv);
-        dni_tv = root.findViewById(R.id.dni_tv);
-        email_tv = root.findViewById(R.id.email_tv);
-        phone_tv = root.findViewById(R.id.phone_tv);
-        garanty_tv = root.findViewById(R.id.garanty_tv);
-        garantyPhone_tv = root.findViewById(R.id.garanty_phone_tv);
+        code_tv = root.findViewById(R.id.infoCode);
+        name_tv = root.findViewById(R.id.infoName);
+        lastname_tv = root.findViewById(R.id.infoLastname);
+        dni_tv = root.findViewById(R.id.infoDni);
+        email_tv = root.findViewById(R.id.infoEmail);
+        phone_tv = root.findViewById(R.id.infoPhone);
+        garanty_tv = root.findViewById(R.id.infoGaranty);
+        garantyPhone_tv = root.findViewById(R.id.infoGarantyPhone);
+
+        code_label = root.findViewById(R.id.code_tv);
+        name_label = root.findViewById(R.id.name_tv);
+        lastname_label = root.findViewById(R.id.lastname_tv);
+        dni_label = root.findViewById(R.id.dni_tv);
+        email_label = root.findViewById(R.id.email_tv);
+        phone_label = root.findViewById(R.id.phone_tv);
+        garanty_label = root.findViewById(R.id.garanty_tv);
+        garantyPhone_label = root.findViewById(R.id.garanty_phone_tv);
     }
 
     @Override

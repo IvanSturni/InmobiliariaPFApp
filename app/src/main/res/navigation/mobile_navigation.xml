@@ -31,12 +31,20 @@
         android:id="@+id/inquilinosFragment"
         android:name="com.sturni.inmobiliariapfapp.ui.inquilinos.InquilinosFragment"
         android:label="Inquilinos"
-        tools:layout="@layout/inquilinos_fragment" />
+        tools:layout="@layout/inquilinos_fragment" >
+        <action
+            android:id="@+id/action_inquilinosFragment_to_InquilinoDetalleFragment"
+            app:destination="@id/InquilinoDetalleFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/InquilinoDetalleFragment"
         android:name="com.sturni.inmobiliariapfapp.ui.inquilinos.InquilinoDetalleFragment"
         android:label="Inquilinos Detalles"
-        tools:layout="@layout/inquilino_detalle_fragment" />
+        tools:layout="@layout/inquilino_detalle_fragment" >
+        <action
+            android:id="@+id/action_InquilinoDetalleFragment_to_inquilinosFragment"
+            app:destination="@id/inquilinosFragment" />
+    </fragment>
 
 </navigation>

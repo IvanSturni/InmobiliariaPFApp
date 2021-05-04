@@ -12,17 +12,6 @@
         tools:layout="@layout/fragment_mapa" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.sturni.inmobiliariapfapp.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.sturni.inmobiliariapfapp.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
-    <fragment
         android:id="@+id/inmueblesFragment"
         android:name="com.sturni.inmobiliariapfapp.ui.inmuebles.InmueblesFragment"
         android:label="Inmuebles"
@@ -46,6 +35,24 @@
             android:id="@+id/action_inmuebleFragment_to_inmueblesFragment"
             app:destination="@id/inmueblesFragment"
             app:exitAnim="@anim/fragment_open_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/contratosFragment"
+        android:name="com.sturni.inmobiliariapfapp.ui.contratos.ContratosFragment"
+        android:label="Contratos"
+        tools:layout="@layout/inquilinos_fragment" >
+        <action
+            android:id="@+id/action_contratosFragment_to_pagosFragment"
+            app:destination="@id/pagosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagosFragment"
+        android:name="com.sturni.inmobiliariapfapp.ui.contratos.PagosFragment"
+        android:label="Pagos"
+        tools:layout="@layout/pagos_fragment" >
+        <action
+            android:id="@+id/action_pagosFragment_to_contratosFragment"
+            app:destination="@id/contratosFragment" />
     </fragment>
 
 </navigation>

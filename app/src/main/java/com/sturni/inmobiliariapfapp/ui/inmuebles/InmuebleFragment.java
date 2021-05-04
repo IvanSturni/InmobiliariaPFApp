@@ -19,7 +19,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.sturni.inmobiliariapfapp.R;
-import com.sturni.inmobiliariapfapp.modelo.Inmueble;
 
 import java.text.NumberFormat;
 import java.util.Locale;

@@ -36,7 +36,7 @@
                 android:text="tvDireccion"
                 android:textSize="24sp"
                 app:layout_constraintStart_toEndOf="@+id/ivInmFoto"
-                app:layout_constraintTop_toTopOf="@+id/ibDetalles" />
+                app:layout_constraintTop_toTopOf="@+id/ibPagos" />
 
             <TextView
                 android:id="@+id/tvPrecio"
@@ -47,7 +47,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvDireccion" />
 
             <ImageButton
-                android:id="@+id/ibDetalles"
+                android:id="@+id/ibPagos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="28dp"

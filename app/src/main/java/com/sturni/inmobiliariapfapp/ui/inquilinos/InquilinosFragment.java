@@ -38,13 +38,14 @@ public class InquilinosFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
         mViewModel = new ViewModelProvider(this).get(InquilinosViewModel.class);
-        mViewModel.getMutable().observe(getViewLifecycleOwner(), inmuebles -> {
-            RecyclerView.Adapter adapter = new InquilinoAdapter(getContext(),inmuebles);
+        mViewModel.obtenerInmueblesMutable().observe(getViewLifecycleOwner(), inquilino -> {
+            RecyclerView.Adapter adapter = new InquilinoAdapter(getContext(),inquilino);
             recView.setAdapter(adapter);
             recView.setLayoutManager(new LinearLayoutManager(getContext()));
         });
-        mViewModel.cargarDatos(null);
+        mViewModel.leer();
     }
 
 }

@@ -36,7 +36,7 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.sturni.inmobiliariapfapp.ui.profile.profile"
-        android:label="Inquilinos"
+        android:label="Perfil"
         tools:layout="@layout/profile_fragment" />
 
 </navigation>

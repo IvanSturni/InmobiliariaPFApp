@@ -36,6 +36,26 @@ public class InquilinoDetalleFragment extends Fragment {
 
         initView(root);
 
+        inquilinoActual = (Inquilino) getArguments().getSerializable("inquilino");
+
+        mViewModel.getInquilinoMutableLiveData().observe(getViewLifecycleOwner(), new Observer<Inquilino>() {
+            @Override
+            public void onChanged(Inquilino inquilino) {
+                inquilinoActual = inquilino;
+
+                code_tv.setText(""+inquilinoActual.getIdInquilino());
+                name_tv.setText(inquilinoActual.getNombre());
+                lastname_tv.setText(inquilinoActual.getApellido());
+                dni_tv.setText(""+inquilinoActual.getDNI());
+                email_tv.setText(inquilinoActual.getEmail());
+                phone_tv.setText(inquilinoActual.getTelefono());
+                garanty_tv.setText(inquilinoActual.getNombreGarante());
+                garantyPhone_tv.setText(inquilinoActual.getTelefonoGarante());
+            }
+        });
+
+        mViewModel.loadDetailInquilino(inquilinoActual);
+
         return root;
     }
 
@@ -55,10 +75,10 @@ public class InquilinoDetalleFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(InquilinoDetalleViewModel.class);
         mViewModel.getInquilinoMutableLiveData().observe(getViewLifecycleOwner(), inquilino  -> {
-            code_tv.setText(inquilino.getIdInquilino());
+            code_tv.setText(""+inquilino.getIdInquilino());
             name_tv.setText(inquilino.getNombre());
             lastname_tv.setText(inquilino.getApellido());
-            dni_tv.setText(inquilino.getDNI().toString());
+            dni_tv.setText(""+inquilino.getDNI());
             email_tv.setText(inquilino.getEmail());
             phone_tv.setText(inquilino.getTelefono());
             garanty_tv.setText(inquilino.getNombreGarante());
